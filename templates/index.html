@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyDat</title>
+    <!-- Chargement correct du CSS local -->
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Bibliothèque d'icônes Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>MyDat</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section d'accueil plein écran -->
+    <section class="hero-section">
+        <h2 class="hero-title">MyDat</h2>
+        <p class="hero-subtitle">MyDat is a software easily to use and very usefull.</p>
+        <div class="scroll-indicator">
+            <p>Défiler pour voir le reste</p>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <main>
+        <h3 id="about">About MyDat</h3>
+        <strong>Cross Platform</strong>
+        <p>MyDat works on Windows, macOS, and Linux.</p>
+        
+        <h4>Help</h4>
+        <h5>Commands</h5>
+        <pre><code>mydat -e "file" "encrypt key" # Encrypts the file with the specified key.
+mydat -d "file" "decrypt key" # Decrypts the file with the specified key.
+mydat -g "bits number" # Generates a new key with the specified number of bits.
+mydat -b "folder" "file" # Generates a new 0% compressed file with the specified folder and file.
+mydat -i "file" "folder" # Extracts the contents of the specified file to the specified folder.</code></pre>
+
+        <h3 id="download">Download</h3>
+        <h4>Choose your OS</h4>
+        <div class="os-buttons">
+            <a href="/downloads/Win" class="os-btn" title="Télécharger pour Windows">
+                <i class="fab fa-windows"></i>
+            </a>
+    
+            <div class="mac-dropdown">
+                <button class="os-btn" title="Télécharger pour macOS">
+                    <i class="fab fa-apple"></i>
+                </button>
+                <div class="mac-menu">
+                    <a href="/downloads/AppleSiliconMac" class="mac-link"><i class="fas fa-microchip"></i> Apple Silicon (M1/M2/M3)</a>
+                    <a href="/downloads/IntelMac" class="mac-link"><i class="fab fa-intel"></i> Intel Processor</a>
+                </div>
+            </div>
+    
+            <a href="/downloads/Linux" class="os-btn" title="Télécharger pour Linux">
+                <i class="fab fa-linux"></i>
+            </a>
+        </div>
+
+        <section class="contact-section">
+        <h3 id="contact">Join the Community</h3>
+        <p class="contact-subtitle">Stay updated, report bugs, or contribute to MyDat!</p>
+        
+        <div class="community-buttons">
+            <a href="https://discord.gg/v7EyrBSU" target="_blank" class="community-btn discord" title="Rejoindre notre Discord">
+                <i class="fab fa-discord"></i>
+                <span>Discord</span>
+            </a>
+    
+            <a href="https://github.com/GabiMinecraft02" target="_blank" class="community-btn github" title="Voir le GitHub">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MyDat. by GabiMinecraft02 All rights reserved.</p>
+    </footer>
+</body>
+</html>

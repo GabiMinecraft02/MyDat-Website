@@ -1,0 +1,364 @@
+/* ==========================================================================
+   1. STYLES GÉNÉRAUX & RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Rend le défilement fluide et élégant ! */
+}
+
+body {
+    background-color: #111827; /* Fond sombre moderne */
+    color: #f3f4f6;            /* Texte blanc cassé */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. BARRE DE NAVIGATION (HEADER)
+   ========================================================================== */
+header {
+    background-color: #1f2937;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    border-bottom: 2px solid #374151;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #3b82f6; /* Accent bleu pour la marque */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #3b82f6;
+}
+
+/* ==========================================================================
+   3. SECTION ACCUEIL PLEIN ÉCRAN (HERO)
+   ========================================================================== */
+.hero-section {
+    height: 100vh; /* Fait exactement la hauteur de l'écran */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrage vertical */
+    align-items: center;     /* Centrage horizontal */
+    background: radial-gradient(circle, #1e293b 0%, #111827 100%);
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 6rem; /* Enorme titre MyDat */
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #9ca3af;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+/* Flèche animée en bas pour inviter à défiler */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #6b7280;
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator i {
+    font-size: 1.5rem;
+    margin-top: 8px;
+    color: #3b82f6;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-10px) translateX(-50%); }
+    60% { transform: translateY(-5px) translateX(-50%); }
+}
+
+/* ==========================================================================
+   4. CONTENU PRINCIPAL (MAIN)
+   ========================================================================== */
+main {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+main h3 {
+    font-size: 2rem;
+    color: #3b82f6;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+main h4 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+main h5 {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center; /* Correction : le titre "Commands" est centré ! */
+}
+
+main p {
+    font-size: 1.1rem;
+    color: #d1d5db;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+main strong {
+    display: block;
+    font-size: 1.3rem;
+    margin-top: 25px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* ==========================================================================
+   5. BLOC DE CONSOLE (COMMANDES)
+   ========================================================================== */
+pre {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    padding: 25px;
+    overflow-x: auto; /* Permet de défiler de gauche à droite sur mobile */
+    margin: 20px auto 40px auto;
+    max-width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+code {
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    color: #10b981; /* Vert style terminal */
+    font-size: 0.95rem;
+    display: block;
+    white-space: pre;
+    padding-left: 5px;
+}
+
+/* ==========================================================================
+   6. BOUTONS DE TÉLÉCHARGEMENT MASSIFS
+   ========================================================================== */
+.os-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 70px; /* Bel espace entre les boutons */
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.os-btn {
+    color: #ffffff;   /* Reste bien visible en blanc */
+    font-size: 130px; /* Très grande taille, style OBS */
+    text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease;
+}
+
+.os-btn:hover {
+    color: #3b82f6;        /* Devient bleu fluo au survol */
+    transform: scale(1.15); /* S'agrandit légèrement de façon dynamique */
+}
+
+/* ==========================================================================
+   7. PIED DE PAGE (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: #0f172a;
+    text-align: center;
+    padding: 40px 20px;
+    color: #6b7280;
+    font-size: 0.9rem;
+    border-top: 1px solid #1f2937;
+}
+
+/* ==========================================================================
+   8. MENU DÉROULANT POUR MAC (INTEL / APPLE SILICON)
+   ========================================================================== */
+.mac-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* On réinitialise le style du bouton Mac pour qu'il agisse comme les autres liens */
+.mac-dropdown .os-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Le conteneur des liens Mac (caché par défaut) */
+.mac-menu {
+    display: none;
+    position: absolute;
+    top: 90%; /* Apparaît juste en dessous du logo Apple */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    min-width: 240px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    overflow: hidden;
+    padding: 5px 0;
+}
+
+/* Style de chaque lien Mac (Intel / Apple) */
+.mac-link {
+    color: #f3f4f6;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-align: left;
+}
+
+/* Effet au survol d'une des options Mac */
+.mac-link:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+/* LA MAGIE : Quand on passe la souris sur le bloc Mac, le menu apparaît ! */
+.mac-dropdown:hover .mac-menu {
+    display: block;
+}
+
+/* On garde l'effet de zoom sur l'icône Apple au survol global */
+.mac-dropdown:hover .os-btn {
+    color: #3b82f6;
+    transform: scale(1.15);
+}
+
+/* ==========================================================================
+   9. SECTION CONTACTS & COMMUNAUTÉ
+   ========================================================================== */
+.contact-section {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.contact-section h3 {
+    font-size: 2rem;
+    color: #3b82f6;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    text-align: center;
+    color: #9ca3af;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* Conteneur pour aligner les 2 gros boutons côte à côte */
+.community-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Style de base des gros boutons de communauté */
+.community-btn {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease;
+}
+
+/* Icônes géantes à l'intérieur des boutons */
+.community-btn i {
+    font-size: 80px;
+    margin-bottom: 15px;
+}
+
+/* Style spécifique au bouton Discord (Couleur officielle Discord) */
+.community-btn.discord {
+    background-color: #5865F2;
+    border: 1px solid #4752C4;
+}
+
+.community-btn.discord:hover {
+    box-shadow: 0 0 25px rgba(88, 101, 242, 0.4);
+}
+
+/* Style spécifique au bouton GitHub (Sombre) */
+.community-btn.github {
+    background-color: #24292e;
+    border: 1px solid #3f4448;
+}
+
+.community-btn.github:hover {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Effet de zoom commun au survol */
+.community-btn:hover {
+    transform: scale(1.08);
+}
